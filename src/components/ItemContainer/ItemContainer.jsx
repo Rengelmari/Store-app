@@ -1,6 +1,9 @@
-
-const ItemContainer = (greetings) => {
-return ({greetings})
+const ItemsContainer = ({saludo}) => {
+return (
+    <p>
+        {saludo}
+    </p>
+    )
 }
 
-export default ItemContainer;
+export default ItemsContainer;

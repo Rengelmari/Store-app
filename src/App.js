@@ -1,15 +1,14 @@
 import './App.css';
-import ItemContainer from './components/ItemContainer/ItemContainer';
 import NavBar from './components/NavBar/NavBar';
-
+import ItemsContainer from './components/ItemContainer/ItemContainer';
 
 function App() {
-
+  const Hola = "Bienvenido"
   return (
     <div className="App">
       <NavBar/>
-      <ItemContainer greetings = "Bienvenid@" />
-    </div>
+      <ItemsContainer saludo={Hola}/>
+    </div>  
   );
 }
 
