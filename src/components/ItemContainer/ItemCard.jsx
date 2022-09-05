@@ -10,7 +10,7 @@ function ItemCard(props) {
                 <Card.Title>{descripcion}</Card.Title>
                 <Card.Text>Precio: {precio}</Card.Text>
                 <Card.Text>Stock: {stock}</Card.Text>
-                <Contador/>
+                <Contador Stock={stock}/>
             </Card.Body>
         </Card>
     );
