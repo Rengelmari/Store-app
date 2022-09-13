@@ -1,18 +1,48 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemsContainer from './components/ItemContainer/ItemContainer';
-/* import Contador from './components/ItemContainer/Contador'; */
+import { useState } from 'react';
+import { useEffect } from "react";
+import ItemDetail from './components/ItemDetail/ItemDetail';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 
 function App() {
-  /*   const Stock = 10;
-   */
+/*   const [carrito, setCarrito] = useState([])
+  const [productos, setProductos] = useState ([])
+
+
+
+  const SearchProducts = async () =>{
+    try {
+        const Respuesta = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=samsung')
+        const data = await Respuesta.json();
+        setProductos(data.results);
+    } catch (e) {
+    }
+}
+
+useEffect(() => {
+    SearchProducts()
+}, []) */
+
   return (
-    <div className="App">
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element= {<ItemsContainer/>}/>
+        <Route path="/productos" element= {<ItemsContainer/>} />
+        <Route path="/item/:key" element= {<ItemDetail/>} />
+        {/* <Route path="/api" element= {<ItemDetailContainer/>} productos ={productos} setCarrito = {setCarrito} carrito ={carrito} /> */}
+      </Routes>
+    </BrowserRouter>
+
+
+/*     <div className="App">
       <NavBar />
       <ItemsContainer />
-      {/*       <Contador Stock={Stock} /> */}
-    </div>
+      <ItemDetailContainer productos ={productos} setCarrito = {setCarrito} carrito ={carrito} />
+    </div> */
   );
 }
 

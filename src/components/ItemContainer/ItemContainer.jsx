@@ -26,7 +26,7 @@ const ItemsContainer = () => {
                 else {
                     reject(console.log("Error"))
                 }
-            }, 6000)
+            }, 1500)
         })
     }
 useEffect(() => {
