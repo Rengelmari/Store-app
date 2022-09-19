@@ -1,23 +1,41 @@
+import { useEffect, useState } from "react"
+import { GetData } from "../GetData"
+import { useParams } from 'react-router-dom'
+import ItemDetail from "./ItemDetail"
 
-const ItemDetailComponent = ({productos, setCarrito, carrito}) => {
+
+const ItemDetailContainer = () => {
+
+    const [item, setItem] = useState(null)
+    const [loading, setLoading] = useState(true)
+
+    const {itemId} = useParams()
+
+    useEffect(() => {
+        setLoading(true)
+
+        GetData()
+            .then((res) => {
+                setItem( res.find((producto) => producto.id === Number(itemId)) )
+            })
+            .catch(err => console.log(err))
+            .finally(() => {
+                setLoading(false)
+            })
+
+    }, [])
+
     return (
-        <>
-            {productos.map((producto, index) => {
-                return (
-                    <div key={index}>
-                        <h3>{producto.title}</h3>
-                        <img src={producto.thumbnail} alt=''></img>
-                        <div>
-                            <button onClick={() => {
-                                setCarrito ([...carrito, producto]);
-                                }}> Agregar al carrito
-                            </button>
-                        </div>
-                    </div>
-                )
-            })}
-        </>  
+        <div>
+            {
+                loading
+                ? <h2>Cargando Producto...</h2>
+                : <ItemDetail item={producto} />
+            }
+            
+
+        </div>
     )
 }
 
-export default ItemDetailComponent;
+export default ItemDetailContainer;
