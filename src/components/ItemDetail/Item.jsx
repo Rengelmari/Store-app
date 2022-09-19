@@ -10,7 +10,7 @@ const Item = ({ producto }) => {
                 <Card.Body >
                 <Card.Title className='Card-title'> {producto.descripcion} </Card.Title>        
                 <Card.Title className='Card-title'> 
-                    <p>ID: {producto.key}</p>
+                    <p>ID: {producto.id}</p>
                     <p>Precio: ${producto.precio}</p>
                     <small>Stock: {producto.stock}</small>
                     {/* <Contador Stock={producto.stock}/> */}

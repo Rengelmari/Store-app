@@ -9,10 +9,10 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const {itemId} = useParams()
+    const {itemId} = useParams();
 
     useEffect(() => {
-        setLoading(true)
+/*         setLoading(true) */
 
         GetData()
             .then((res) => {
@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
             })
             .catch(err => console.log(err))
             .finally(() => {
-                setLoading(false)
+                setLoading(true)
             })
 
     }, [])
