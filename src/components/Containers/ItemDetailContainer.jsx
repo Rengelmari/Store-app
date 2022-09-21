@@ -6,21 +6,21 @@ import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
 
-    const [item, setItem] = useState(null)
+    const {itemId} = useParams();
+    const [item, setItem] = useState()
     const [loading, setLoading] = useState(true)
 
-    const {itemId} = useParams();
-
     useEffect(() => {
-/*         setLoading(true) */
+        setLoading(true)
 
         GetData()
-            .then((res) => {
-                setItem( res.find((producto) => producto.id === Number(itemId)) )
+            .then((item) => {
+                setItem(item.find(producto => producto.id === (itemId)))
+/*                 setItem( res.find((producto) => producto.id === Number(itemId)) ) */
             })
             .catch(err => console.log(err))
             .finally(() => {
-                setLoading(true)
+                setLoading(false)
             })
 
     }, [])
@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
             {
                 loading
                 ? <h2>Cargando Producto...</h2>
-                : <ItemDetail item={producto} />
+                : <ItemDetail item={item} />
             }
             
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { GetData } from "../GetData"
 import Spinner from "react-bootstrap/Spinner";
-import ItemList from '../ItemDetail/ItemList';
+import ItemList from '../ItemList';
 import { Link } from 'react-router-dom';
 
 const ItemListCard = () => {
