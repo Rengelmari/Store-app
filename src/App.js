@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ItemListCard from './components/Containers/ItemListCard';
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart';
+import ItemDetailContainer from './components/Containers/ItemDetailContainer';
 
 
 function App() {
@@ -34,8 +35,8 @@ useEffect(() => {
       <Routes>
         <Route path="/" element= {<ItemsContainer/>}/>
         <Route path="/productos" element= {<ItemListCard/>} />
-        <Route path="/item/:key" element= {<ItemDetail/>}  />
-        <Route path="cart" element={Cart} />
+        <Route path="/item/:key" element= {<ItemDetailContainer/>}  />
+        <Route path="cart" element={<Cart/> } />
         {/* <Route path="/api" element= {<ItemDetailContainer/>} productos ={productos} setCarrito = {setCarrito} carrito ={carrito} /> */}
       </Routes>
     </BrowserRouter>
