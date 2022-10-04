@@ -36,8 +36,8 @@ const ItemDetail = ({ item }) => {
 			</Card> */
 
 			<div className="container my-5">
-            <img src={item.img} alt=""/>
-            <h3>{item.descripcion}</h3>
+            <img src={item.image} alt=""/>
+            <h3>{item.title}</h3>
             <p>{item.desc}</p>
             <h4>{item.precio}</h4>
             

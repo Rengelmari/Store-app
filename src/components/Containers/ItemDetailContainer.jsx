@@ -2,10 +2,32 @@ import { useEffect, useState } from "react";
 import { GetData } from "../GetData";
 import ItemDetail from "./../ItemDetail";
 import { useParams } from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
-	const [item, setItem] = useState(null);
+    const [item, setItem] = useState({})
+    const [loading, setLoading] = useState(true)
+
+    const {key} = useParams()
+
+    useEffect(() => {
+        setLoading(true)
+        const db = getFirestore()
+         // 1.- Armar la referencia (sync)
+        const docRef = doc(db, 'items', key)
+         // 2.- Llamar a la DB (async)
+        getDoc(docRef)
+            .then((doc) => {
+                setItem({id: doc.id, ...doc.data()})
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [key])
+
+
+/* 	const [item, setItem] = useState(null);
 	const [loading, setLoading] = useState(true);
 
 	const { key } = useParams();
@@ -20,7 +42,7 @@ const ItemDetailContainer = () => {
 			.catch((err) => console.log(err))
 			.finally(() => {
 				setLoading(false);
-			})}, [key]);
+			})}, [key]); */
         
 	return (
         <div>

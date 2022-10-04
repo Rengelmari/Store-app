@@ -36,7 +36,7 @@ useEffect(() => {
         <Route path="/" element= {<ItemsContainer/>}/>
         <Route path="/productos" element= {<ItemListCard/>} />
         <Route path="/item/:key" element= {<ItemDetailContainer/>}  />
-        <Route path="cart" element={<Cart/> } />
+        <Route path="/cart" element={<Cart/> } />
         {/* <Route path="/api" element= {<ItemDetailContainer/>} productos ={productos} setCarrito = {setCarrito} carrito ={carrito} /> */}
       </Routes>
     </BrowserRouter>

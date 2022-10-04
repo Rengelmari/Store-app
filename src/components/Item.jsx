@@ -5,14 +5,13 @@ const Item = ({ producto }) => {
 	return (
 		<div className='container my-5'>
 			<Card style={{ width: "14rem" }} className='producto mx-auto'>
-				<Card.Img variant='top' src={producto.img} alt={producto.altText} />
+				<Card.Img variant='top' src={producto.image} alt={producto.altText} />
 				<Card.Body>
-					<Card.Title className='Card-title'> {producto.descripcion} </Card.Title>
+					<Card.Title className='Card-title'> {producto.title} </Card.Title>
 					<Card.Title className='Card-title'>
 						<p>ID: {producto.id}</p>
 						<p>Precio: ${producto.precio}</p>
 						<small>Stock: {producto.stock}</small>
-						{/* <Contador Stock={producto.stock}/> */}
 					</Card.Title>
 				</Card.Body>
 			</Card>
