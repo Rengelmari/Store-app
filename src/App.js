@@ -7,7 +7,7 @@ import ItemListCard from './components/Containers/ItemListCard';
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart';
 import ItemDetailContainer from './components/Containers/ItemDetailContainer';
-
+import Checkout from './components/Checkout';
 
 function App() {
 /*   const [carrito, setCarrito] = useState([])
@@ -37,6 +37,7 @@ useEffect(() => {
         <Route path="/productos" element= {<ItemListCard/>} />
         <Route path="/item/:key" element= {<ItemDetailContainer/>}  />
         <Route path="/cart" element={<Cart/> } />
+        <Route path='/checkout' element={<Checkout/>}/>
         {/* <Route path="/api" element= {<ItemDetailContainer/>} productos ={productos} setCarrito = {setCarrito} carrito ={carrito} /> */}
       </Routes>
     </BrowserRouter>

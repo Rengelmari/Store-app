@@ -26,7 +26,7 @@ const Carrito = () => {
             <h4>Total: ${cartTotal()}</h4>
             <button onClick={emptyCart} className="btn btn-danger">Vaciar carrito</button>
 
-            <Link to= {`/`} className="btn btn-dark my-2">Ir al inicio</Link>
+            <Link to= {`/checkout`} className="btn btn-dark my-2">Terminar compra</Link>
         </div>
     )
 }

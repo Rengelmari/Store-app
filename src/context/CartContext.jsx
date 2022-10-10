@@ -53,6 +53,17 @@ export const CartProvider = ({children}) => {
         localStorage.setItem('carrito', JSON.stringify(cart))
     }, [cart])
 
+    const terminarCompra = (id)=>{
+      Swal.fire({
+          title: 'Compra exitosa',
+          text: `Tu numero de orden es: ${id}`,
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'OK'
+        })
+        setCart([])
+  }
+    
     return (
         <CartContext.Provider value={{
             cart,
@@ -61,7 +72,8 @@ export const CartProvider = ({children}) => {
             cartQuantity,
             cartTotal,
             emptyCart,
-            removeItem
+            removeItem,
+            terminarCompra
           }}>
             {children}
         </CartContext.Provider>
