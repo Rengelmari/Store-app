@@ -13,9 +13,9 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
         const db = getFirestore()
-         // 1.- Armar la referencia (sync)
+
         const docRef = doc(db, 'items', key)
-         // 2.- Llamar a la DB (async)
+
         getDoc(docRef)
             .then((doc) => {
                 setItem({id: doc.id, ...doc.data()})
