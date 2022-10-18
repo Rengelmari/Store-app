@@ -1,0 +1,18 @@
+.inicio {
+/*     grid-area: ini; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30rem; }
+
+    .titulo {
+        font-size: xx-large;
+        color: black;
+        text-align: center; }
+    
+    .imgPrincipal {
+        size: 50rem;
+    }

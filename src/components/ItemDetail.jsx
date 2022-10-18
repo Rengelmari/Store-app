@@ -1,6 +1,5 @@
-import Card from "react-bootstrap/Card";
 import Contador from "./Contador"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
@@ -21,27 +20,12 @@ const ItemDetail = ({ item }) => {
     }
 
 	return (
-/* 		<div className='container my-5'>
-			<Card style={{ width: "14rem" }} className='producto mx-auto'>
-				<Card.Img variant='top' src={item.img} alt={item.altText} />
-				<Card.Body>
-					<Card.Title className='Card-title'> {item.descripcion} </Card.Title>
-					<Card.Title className='Card-title'>
-						<p>ID: {item.id}</p>
-						<p>Precio: ${item.precio}</p>
-						<small>Stock: {item.stock}</small>
-						<Contador Stock={item.stock}/>
-					</Card.Title>
-				</Card.Body>
-			</Card> */
 
 			<div className="container my-5">
             <img src={item.image} alt=""/>
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
             <h4>{item.precio}</h4>
-            
-
             {
                 isInCart(item.id)
                 ?   <Link to="/cart" className="btn btn-success my-2">Terminar mi compra</Link>

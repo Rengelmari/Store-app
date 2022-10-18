@@ -5,8 +5,6 @@ const Carrito = () => {
 
     const { cart, cartTotal, emptyCart, removeItem } = useCartContext()
 
-    
-
     return (
         <div className="container my-5">
             <h2>Tu carrito</h2>
@@ -21,7 +19,6 @@ const Carrito = () => {
                     <hr/>
                 </div>
             ))}
-
 
             <h4>Total: ${cartTotal()}</h4>
             <button onClick={emptyCart} className="btn btn-danger">Vaciar carrito</button>

@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-/* import Container from 'react-bootstrap/Container'; */
-import { Button } from 'react-bootstrap';
+import React from 'react';
 
 const Contador = ({max, counter, setCounter, handleAgregar}) => {
 

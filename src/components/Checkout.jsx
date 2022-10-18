@@ -17,7 +17,6 @@ const Checkout = () => {
         comprador: values,
         items:cart,
         total:cartTotal(),
-/*         fecha:new Date().toString() */
 
     }
 
