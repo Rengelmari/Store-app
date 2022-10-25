@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './ItemContainer.css';
 
-const ItemsContainer = () => {
+const ItemContainer = () => {
 
 return (
     <>
@@ -15,4 +15,4 @@ return (
     </>
 )
 }
-export default ItemsContainer;
+export default ItemContainer;
